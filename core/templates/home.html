@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% block head %}
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Raleway|PT+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/home.css">
+    <script type="text/javascript" src="../static/js/modernizr-custom.js">
+    </script>
+
+    {% endblock %}
+  </head>
+  <body {% block bodyid %}homeBody{% endblock %}>
+    {% block pagecontent %}
+    <div id="indexOverlay">
+      <div class="row">
+        <img src="../static/images/logo-png.png" alt="logo" class="col-12" id="logo">
+      </div>
+    </div>
+    <div class="row" id="underlay">
+      <a href="{% url 'index' %}" class="col-6" id="portfolioButton">VIEW MY PORTFOLIO</a>
+    </div>
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,218 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% block head %}
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+    {% endblock %}
+  </head>
+  <body {% block bodyid %}indexBody{% endblock %}>
+    {% block pagecontent %}
+    {% if messages %}
+      <div class="row">
+        <ul class="messages">
+      {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }} col-12"{% endif %}>{{ message }}</li>
+      {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+    <div id="portfolioContent">
+      <div class="jumpToNav">
+        <div class="row">
+          <p id="expandNav">Loading...</p>
+        </div>
+        <div class="row" id="topLevelJumpto">
+          <!-- <a href="#concertDiv" class="col--2 jumpToA">Concerts</a> -->
+          <a href="#eventsDiv" class="col--2 jumpToA" id="eventsJumpTo">Events</a>
+          <a href="#peopleDiv" class="col--2 jumpToA">People</a>
+          <a href="#sportsDiv" class="col--2 jumpToA" id="sportsJumpTo">Sports</a>
+          <a href="#travelDiv" class="col--2 jumpToA" id="travelJumpTo">Travel</a>
+          <a href="#weddingDiv" class="col--2 jumpToA">Wedding</a>
+          <!-- <a href="#familyDiv" class="col--2 jumpToA" id="familyJumpTo">Family</a> -->
+          <!-- <a href="#foodDiv" class="col--2 jumpToA">Food</a> -->
+        </div>
+        <div class="row" id="bottomLevelJumpTo">
+        </div>
+      </div>
+
+<!-- {#----------------------- Concert Photos -------------------------#} -->
+      <div id="concertDiv" class="portfolioCategoryDiv">
+          <div class="row categoryDivHeader">
+            <header class="categoryHeader col-12" id="concertHeader">Concerts</header>
+          </div>
+          <div class="row portfolioImage">
+          {% for concert_photo in concert_photos %}
+            {% if concert_photo %}
+            <div class="col-3 photoDiv">
+              <a href="{{concert_photo.pk}}"><img src="{{concert_photo.image.url}}" alt="{{concert_photo.title}}" class="col-12 individualPhoto" id="{{concert_photo.title}}"></a>
+            </div>
+              {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row forBlockDiv">
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+
+<!-- {#----------------------- Event Photos -------------------------#} -->
+
+        <div id="eventsDiv" class="portfolioCategoryDiv">
+          <div class="row categoryDivHeader">
+            <header class="categoryHeader col-12" id="eventsHeader">Events</header>
+          </div>
+          <div class="row portfolioImage">
+          {% for event_photo in event_photos %}
+            {% if event_photo %}
+            <div class="col-3 photoDiv">
+              <a href="{{event_photo.pk}}"><img src="{{event_photo.image.url}}" alt="{{event_photo.title}}" class="col-12 individualPhoto" id="{{event_photo.title}}"></a>
+            </div>
+              {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row forBlockDiv">
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+
+<!-- {#----------------------- Family Photos -------------------------#} -->
+
+        <div id="familyDiv" class="portfolioCategoryDiv">
+          <div class="row categoryDivHeader">
+            <header class="categoryHeader col-12" id="familyHeader">Family</header>
+          </div>
+          <div class="row portfolioImage">
+          {% for family_photo in family_photos %}
+            {% if family_photo %}
+            <div class="col-3 photoDiv">
+              <a href="{{family_photo.pk}}"><img src="{{family_photo.image.url}}" alt="{{family_photo.title}}" class="col-12 individualPhoto" id="{{family_photo.title}}"></a>
+            </div>
+              {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row forBlockDiv">
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+<!-- {#----------------------- Food Photos -------------------------#} -->
+
+        <div id="foodDiv" class="portfolioCategoryDiv">
+          <div class="row categoryDivHeader">
+            <header class="categoryHeader col-12" id="foodHeader">Food</header>
+          </div>
+          <div class="row portfolioImage">
+          {% for food_photo in food_photos %}
+            {% if food_photo %}
+            <div class="col-3 photoDiv">
+              <a href="{{food_photo.pk}}"><img src="{{food_photo.image.url}}" alt="{{food_photo.title}}" class="col-12 individualPhoto" id="{{food_photo.title}}"></a>
+            </div>
+              {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row forBlockDiv">
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+<!-- {#----------------------- People Photos -------------------------#} -->
+
+        <div id="peopleDiv" class="portfolioCategoryDiv">
+          <div class="row categoryDivHeader">
+            <header class="categoryHeader col-12" id="peopleHeader">People</header>
+          </div>
+          <div class="row portfolioImage">
+          {% for people_photo in people_photos %}
+            {% if people_photo %}
+            <div class="col-3 photoDiv">
+              <a href="{{people_photo.pk}}"><img src="{{people_photo.image.url}}" alt="{{people_photo.title}}" class="col-12 individualPhoto" id="{{people_photo.title}}"></a>
+            </div>
+              {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row forBlockDiv">
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+
+<!-- {#----------------------- Sports Photos -------------------------#} -->
+
+        <div id="sportsDiv" class="portfolioCategoryDiv">
+          <div class="row categoryDivHeader">
+            <header class="categoryHeader col-12" id="sportsHeader">Sports</header>
+          </div>
+          <div class="row portfolioImage">
+          {% for sports_photo in sports_photos %}
+            {% if sports_photo %}
+            <div class="col-3 photoDiv">
+              <a href="{{sports_photo.pk}}"><img src="{{sports_photo.image.url}}" alt="{{sports_photo.title}}" class="col-12 individualPhoto" id="{{sports_photo.title}}"></a>
+            </div>
+              {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row forBlockDiv">
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+
+<!-- {#----------------------- Travel Photos -------------------------#} -->
+
+        <div id="travelDiv" class="portfolioCategoryDiv">
+          <div class="row categoryDivHeader">
+            <header class="categoryHeader col-12" id="travelHeader">Travel</header>
+          </div>
+          <div class="row portfolioImage">
+          {% for travel_photo in travel_photos %}
+            {% if travel_photo %}
+            <div class="col-3 photoDiv">
+              <a href="{{travel_photo.pk}}"><img src="{{travel_photo.image.url}}" alt="{{travel_photo.title}}" class="col-12 individualPhoto" id="{{travel_photo.title}}"></a>
+            </div>
+              {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row forBlockDiv">
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+
+<!-- {#----------------------- Wedding Photos -------------------------#} -->
+
+        <div id="weddingDiv" class="portfolioCategoryDiv">
+          <div class="row categoryDivHeader">
+            <header class="categoryHeader col-12" id="weddingHeader">Wedding</header>
+          </div>
+          <div class="row portfolioImage">
+          {% for wedding_photo in wedding_photos %}
+            {% if wedding_photo %}
+            <div class="col-3 photoDiv">
+              <a href="{{wedding_photo.pk}}"><img src="{{wedding_photo.image.url}}" alt="{{wedding_photo.title}}" class="col-12 individualPhoto" id="{{wedding_photo.title}}"></a>
+            </div>
+              {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row forBlockDiv">
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+          <!-- <div class="row">
+            <div class="individualCaption col-12">
+              <h2>{{wedding_photo.title}}</h2>
+              <p>{{wedding_photo.notes}}</p>
+            </div>
+          </div>
+          <hr> -->
+        </div>
+      <script type="text/javascript" src="{% static 'js/index.js' %}">
+      </script>
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,140 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*{
+  box-sizing:border-box;
+}
+
+/*  */
+[class*="col-"] {
+			width: 100%;
+	}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    /* border: 1px solid red; */
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#videoPageTitle{
+	font-size: 1.55em;
+  color: #7e69b5;
+  font-family: 'Comfortaa', cursive;
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.videosDiv{
+	margin-top: 5em;
+}
+
+.videoFrame{
+	margin-bottom: 4em;
+	/* box-shadow: 5px 5px 10px #7e69b5; */
+	/* border: 1px solid black; */
+	/* border-radius: 20px; */
+	padding: 0;
+	/* background-color: black; */
+	/* margin-left: 0;
+	margin-right: 2%; */
+}
+iframe{
+	width: 95%;
+	height: 15em;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+	padding: 0;
+	/* border-radius: 20px; */
+	box-shadow: 5px 5px 10px #7e69b5;
+}
+.videoCaption{
+	margin-top: 1em;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: bold;
+	/* color: white; */
+	text-align: center;
+}
+.videoAnchor{
+	text-decoration: none;
+	color: black;
+}
+.videoAnchor:hover{
+	color: #7e69b5;
+}
+
+@media only screen and (min-width:768px) {
+  /* [class*="col-"] {
+        width: 100%;
+    } */
+		/* Grid System */
+		.col-1 {width: 8.33%;}
+		.col-2 {width: 16.66%;}
+		.col-3 {width: 25%;}
+		.col-4 {width: 33.33%;}
+		.col-5 {width: 41.66%;}
+		.col-6 {width: 50%;}
+		.col-7 {width: 58.33%;}
+		.col-8 {width: 66.66%;}
+		.col-9 {width: 75%;}
+		.col-10 {width: 83.33%;}
+		.col-11 {width: 91.66%;}
+		.col-12 {width: 100%;}
+
+		/* Nav Columns(Grid divided by 5) */
+		.basecol--1 {width:20%;}
+		.basecol--2 {width:40%;}
+		.basecol--3 {width:60%;}
+		.basecol--4 {width:80%;}
+		.basecol--5 {width:100%;}
+
+		.videoFrame{
+			margin-left: 5.553%
+		}
+
+}

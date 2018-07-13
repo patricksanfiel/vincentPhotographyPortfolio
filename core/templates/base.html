@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      {% block title %}{% endblock %}
+    </title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Raleway|PT+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css'%}">
+    <script type="text/javascript" src="{% static 'js/base.js'%}">
+    </script>
+    {% block head %}
+    {% endblock %}
+  </head>
+  <body id="{% block bodyid %}{% endblock %}"class="{% block body_class %}{% endblock %} mainBody">
+    <div class="row topnav" id="navToplevelDiv">
+      <nav>
+        <ul>
+          <a href="{% url 'home' %}" class="{% if active_tab == 'Home' %} navAnchor active {% else %} navAnchor {% endif %}">
+            <li class="base--1">
+              Home
+            </li>
+          </a>
+          <!-- <div class="navDropdown base--1"> -->
+            <a href="{% url 'index' %}" class="{% if active_tab == 'Photos' %} navAnchor active {% else %} navAnchor {% endif %}">
+              <li class="base--1">
+                Photos
+              </li>
+              <!-- <div class="dropdownContent">
+                <ul>
+                  <a href="#" class="dropDownAnchor">
+                    <li class="dropdownLI" id="concertsDropdownLi">
+                      Concerts
+                    </li>
+                  </a>
+                  <a href="#" class="dropDownAnchor">
+                    <li class="dropdownLI">
+                      Events
+                    </li>
+                  </a>
+                  <a href="#" class="dropDownAnchor">
+                    <li class="dropdownLI">
+                      Family
+                    </li>
+                  </a>
+                  <a href="#" class="dropDownAnchor">
+                    <li class="dropdownLI">
+                      Food
+                    </li>
+                  </a>
+                  <a href="#" class="dropDownAnchor">
+                    <li class="dropdownLI">
+                      People
+                    </li>
+                  </a>
+                  <a href="#" class="dropDownAnchor">
+                    <li class="dropdownLI">
+                      Sports
+                    </li>
+                  </a>
+                  <a href="#" class="dropDownAnchor">
+                    <li class="dropdownLI">
+                      Travel
+                    </li>
+                  </a>
+                  <a href="#" class="dropDownAnchor">
+                    <li class="dropdownLI">
+                      Wedding
+                    </li>
+                  </a>
+                </ul> -->
+              <!-- </div> -->
+            </a>
+          <!-- </div> -->
+          <a href="{% url 'videos' %}" class="{% if active_tab == 'Videos' %} navAnchor active {% else %} navAnchor {% endif %}">
+            <li class="base--1">
+                Videos
+            </li>
+          </a>
+          <a href="{% url 'contact' %}" class="{% if active_tab == 'Contact' %} navAnchor active {% else %} navAnchor {% endif %}">
+            <li class="base--1">
+              Contact
+            </li>
+          </a>
+          <a href="{% url 'about' %}" class="{% if active_tab == 'About' %} navAnchor active {% else %} navAnchor {% endif %}">
+            <li class="base--1">
+              About
+            </li>
+          </a>
+          <a href="javascript:void(0);" class="icon" id="hamburgerIcon">
+            <i class="fa fa-bars"></i>
+          </a>
+        </ul>
+      </nav>
+    </div>
+    {% block pagecontent %}
+    {% endblock %}
+    <div class="row" id="footer">
+      <p class="col-12" id="footerText">Coded with <i class="far fa-heart"></i> by <a href="#">Patrick</a> in Miami</p>
+    </div>
+  </body>
+</html>

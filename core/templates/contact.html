@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% block head %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/jquery-ui-timepicker-addon.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    {% endblock %}
+  </head>
+  <body>
+    {% block pagecontent %}
+    <div id="formDiv">
+      <div class="row" id="formHead">
+        <h2 id="scheduleAShoot" class="col-12">Schedule A Shoot</h2>
+      </div>
+      <div class="row" id="formBody">
+        <form class="col-12" id="clientForm" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{form.as_p}}
+          <button type="submit" id="formSubmit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <script src="{% static 'js/moment.js'%}">
+    </script>
+    <script src="{% static 'js/jQueryUI/external/jquery/jquery.js' %}"></script>
+    <script src="{% static 'js/jQueryUI/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui-timepicker-addon.js'%}">
+    </script>
+    <script src="{% static 'js/contact.js' %}">
+    </script>
+    {% endblock %}
+  </body>
+</html>

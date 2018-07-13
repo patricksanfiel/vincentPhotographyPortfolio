@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% block head %}
+    <link rel="stylesheet" href="{% static 'css/detail.css'%}">
+    {% endblock %}
+  </head>
+  <body>
+    {% block pagecontent %}
+      <div class="photoDetail">
+        <div class="row">
+          <img src="{{photo.image.url}}" alt="{{photo.image.url}}" class="col-12" id="detailForPhoto">
+        </div>
+      </div>
+      <div class="row sizeButtonDiv">
+        <a href="#" class="col-11" id="sizeToggleButton">Loading...</a>
+      </div>
+      <script type="text/javascript" src="{% static 'js/detail.js' %}"></script>
+    {% endblock %}
+  </body>
+</html>

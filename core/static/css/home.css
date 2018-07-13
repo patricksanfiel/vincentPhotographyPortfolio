@@ -1,0 +1,380 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*{
+  box-sizing: border-box;
+}
+html{
+  height: 100%;
+  width: 100%;
+}
+
+/* Grid System */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+/* Modified Grid */
+.col--1{width: 21.25%;}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    /* border: 1px solid red; */
+}
+[class*="col-"] {
+			width: 70%;
+	}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+body{
+  background-color: black;
+	z-index: 0;
+}
+
+
+#portfolioButton{
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 0.7em;
+  text-align: center;
+  vertical-align: middle;
+  border: 5px solid #5F4C89;
+  border: 5px solid rgba(95,76,137, 0.2);
+  border: 5px solid rgba(255,255,255,0.5);
+	box-shadow: 1px 1px 1px black;
+  font-family: 'PT Sans', sans-serif;
+  /* font-family: 'Comfortaa', cursive; */
+  text-decoration: none;
+  /* font-weight: bold; */
+  /* padding: 0.2em; */
+  position: fixed;
+  top: 7em;
+  font-size: 2em;
+  color: #5F4C89;
+  color: rgba(255,255,255,0.5);
+	text-shadow: 1px 1px 1px black;
+	z-index: 888;
+}
+#portfolioButton:hover{
+  border: 5px solid #5F4C89;
+  box-shadow: 2px -2px 20px #5F4C89;
+  color: #5F4C89;
+  text-shadow: 2px -2px 20px #5F4C89;
+	background-color: black;
+}
+
+#indexOverlay{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: white;
+	z-index: 999;
+	height: 200em;
+	width: 100%;
+	animation-delay: 2s;
+	animation-duration: 3s;
+  animation-name: overlayFade;
+	-webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+#logo{
+	margin-bottom: 10em;
+  margin-top: 4em;
+  margin-left: 15%;
+	/* animation-duration: 2s;
+  animation-name: logoFade;
+	-webkit-animation-fill-mode:forwards; animation-fill-mode:forwards; */
+}
+#underlay{
+	height: 50em;
+	width: 100%;
+	animation-delay: 3.25s;
+	animation-duration: 120s;
+	animation-name: change_background;
+	animation-iteration-count: infinite;
+	/* background-image: url("../images/homepage_background/background0.jpg"); */
+	background-size: cover;
+}
+.active_background{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}
+
+.background_underlay{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 0;
+}
+.inactive_image{
+	display: none;
+}
+
+@keyframes logoFade {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes overlayFade {
+	0%{
+		opacity: 1;
+		width: 100%
+		height: 200em;
+    margin-top: -5em;
+	}
+	10%{
+		width: 100%;
+		height: 140em;
+		margin-top: -40em;
+		margin-bottom: 35%;
+	}
+	20%{
+		width: 100%;
+		height: 100em;
+		margin-top: -80em;
+		margin-bottom: 40%;
+	}
+	30%{
+		width: 100%;
+		height: 60em;
+		margin-top: -120em;
+		margin-bottom: 15%;
+	}
+	40%{
+		width: 100%;
+		height: 20em;
+		margin-top: -160em;
+		margin-bottom: 20%;
+	}
+	50%{
+		width: 100%;
+		height: 10em;
+		margin-top: -200em;
+		margin-bottom: 25%;
+	}
+	60%{
+		width: 100%;
+		height: 8em;
+		margin-top: -250em;
+		margin-bottom: 30%;
+	}
+	70%{
+		width: 100%;
+    display: none;
+		height: 6em;
+		margin-top: -350em;
+		margin-bottom: 35%;
+	}
+	80%{
+		width: 0%;
+    display: none;
+		height: 4em;
+		margin-top: -350em;
+		margin-bottom: 40%;
+	}
+	90%{
+		width: 0%;
+    display: none;
+		height: 2em;
+		margin-top: -350em;
+		margin-bottom: 45%;
+	}
+	100%{
+		display: none;
+		width: 0;
+		height: 0;
+		margin-top: -350em;
+		margin-bottom: 50%;
+	}
+}
+
+@keyframes change_background {
+	0%{
+		background-image: url("../images/homepage_background/background1.jpg");
+	}
+	6.667%{
+		background-image: url("../images/homepage_background/background2.jpg");
+	}
+	13.334%{
+		background-image: url("../images/homepage_background/background3.jpg");
+	}
+	20.001%{
+		background-image: url("../images/homepage_background/background4.jpg");
+	}
+	26.668%{
+		background-image: url("../images/homepage_background/background5.jpg");
+	}
+	33.335%{
+		background-image: url("../images/homepage_background/background6.jpg");
+	}
+	40.002%{
+		background-image: url("../images/homepage_background/background7.jpg");
+	}
+	46.669%{
+		background-image: url("../images/homepage_background/background8.jpg");
+	}
+	53.336%{
+		background-image: url("../images/homepage_background/background9.jpg");
+	}
+	60.003%{
+		background-image: url("../images/homepage_background/background10.jpg");
+	}
+	66.670%{
+		background-image: url("../images/homepage_background/background11.jpg");
+	}
+	73.337%{
+		background-image: url("../images/homepage_background/background12.jpg");
+	}
+	80.004%{
+		background-image: url("../images/homepage_background/background13.jpg");
+	}
+	86.671%{
+		background-image: url("../images/homepage_background/background14.jpg");
+	}
+	93.338%{
+		background-image: url("../images/homepage_background/background15.jpg");
+	}
+	100%{
+		background-image: url("../images/homepage_background/background16.jpg");
+	}
+}
+
+@media only screen and (min-width: 768px) {
+  /* Grid System */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+
+  /* Modified Grid */
+  .col--1{width: 21.25%;}
+
+  #portfolioButton{
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  #logo{
+  	margin-bottom: 10em;
+    margin-top: 2em;
+    margin-left: 0;
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+  .cd-loading-bar {
+    width: calc(100% - 40px);
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 750px) {
+  #logo{
+  margin-top: -5em;;
+  }
+}
+
+@media only screen and (min-width: 750px) and (max-width: 900px) {
+  #logo{
+  margin-top: -15em;;
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1050px) {
+  #logo{
+  margin-top: -20em;;
+  }
+}
+
+@media only screen and (min-width: 1050px) and (max-width: 1200px) {
+  #logo{
+  margin-top: -25em;;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1350px) {
+  #logo{
+  margin-top: -30em;;
+  }
+}
+
+@media only screen and (min-width: 1350px) {
+  #logo{
+  margin-top: -35em;;
+  }
+}
