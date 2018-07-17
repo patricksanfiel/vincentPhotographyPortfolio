@@ -153,6 +153,13 @@ hr{
 	margin-top: 4em;
 	background-color: white;
 }
+#vinceLogo{
+	height: 30em;
+}
+#categoryPageBottom{
+	background-color: white;
+	/* margin-bottom: 5em; */
+}
 
 /* #indexOverlay{
 	position: absolute;
@@ -328,5 +335,9 @@ hr{
 		overflow: visible;
 		/* z-index: 999; */
 		position: relative;
+	}
+	#vinceLogo{
+		margin-left: 33.33%;
+		margin-right: 33.33%;
 	}
 }

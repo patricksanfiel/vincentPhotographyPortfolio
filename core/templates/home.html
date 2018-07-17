@@ -17,11 +17,14 @@
     {% block pagecontent %}
     <div id="indexOverlay">
       <div class="row">
-        <img src="../static/images/logo-png.png" alt="logo" class="col-12" id="logo">
+        {% comment %} <img src="../static/images/logo-png.png" alt="logo" class="col-12" id="logo"> {% endcomment %}
+        <video src="../static/video/videoOpener.mp4" class="col-12" id="logo" autoplay muted style="position:fixed;top:2em;left:0;bottom:2em;right:0;width:100vw;height:100vh;object-fit:cover"></video>
+        <video src="../static/video/videoOpenerMobile.mp4" class="col-12" id="logoMobile" autoplay muted></video>
       </div>
     </div>
-    <div class="row" id="underlay">
-      <a href="{% url 'index' %}" class="col-6" id="portfolioButton">VIEW MY PORTFOLIO</a>
+    <div class="row">
+      <video src="{% static 'video/pictures.mp4' %}" autoplay muted loop id="vincePicReel" style="position:fixed;top:2em;left:0;bottom:2em;right:0;width:100vw;height:100vh;object-fit:cover;"></video>
+      <a href="{% url 'index' %}" class="col-6" id="portfolioButton" style="margin-bottom:0">VIEW MY PORTFOLIO</a>  
     </div>
     {% endblock %}
   </body>

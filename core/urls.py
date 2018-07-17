@@ -24,4 +24,5 @@ urlpatterns = [
     path('photos/<int:pk>', views.detail, name='detail'),
     path('contact/', views.contact, name='contact'),
     path('videos/', views.videos, name="videos"),
+    path('category/', views.singleCategory, name="singleCategory")
 ]

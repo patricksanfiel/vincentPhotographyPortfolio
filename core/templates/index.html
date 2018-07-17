@@ -27,13 +27,11 @@
         </div>
         <div class="row" id="topLevelJumpto">
           <!-- <a href="#concertDiv" class="col--2 jumpToA">Concerts</a> -->
-          <a href="#eventsDiv" class="col--2 jumpToA" id="eventsJumpTo">Events</a>
-          <a href="#peopleDiv" class="col--2 jumpToA">People</a>
-          <a href="#sportsDiv" class="col--2 jumpToA" id="sportsJumpTo">Sports</a>
-          <a href="#travelDiv" class="col--2 jumpToA" id="travelJumpTo">Travel</a>
-          <a href="#weddingDiv" class="col--2 jumpToA">Wedding</a>
-          <!-- <a href="#familyDiv" class="col--2 jumpToA" id="familyJumpTo">Family</a> -->
-          <!-- <a href="#foodDiv" class="col--2 jumpToA">Food</a> -->
+          <a href="{% url 'singleCategory'%}?category=events" class="col--2 jumpToA" id="eventsJumpTo">Events</a>
+          <a href="{% url 'singleCategory'%}?category=people" class="col--2 jumpToA">People</a>
+          <a href="{% url 'singleCategory'%}?category=sports" class="col--2 jumpToA" id="sportsJumpTo">Sports</a>
+          <a href="{% url 'singleCategory'%}?category=travel" class="col--2 jumpToA" id="travelJumpTo">Travel</a>
+          <a href="{% url 'singleCategory'%}?category=wedding" class="col--2 jumpToA">Wedding</a>
         </div>
         <div class="row" id="bottomLevelJumpTo">
         </div>
@@ -210,6 +208,7 @@
             </div>
           </div>
           <hr> -->
+          <div id="categoryPageBottom" class="row"><img src="{% static 'images/logo-png.png'%}" class="col-4" id="vinceLogo"></div>
         </div>
       <script type="text/javascript" src="{% static 'js/index.js' %}">
       </script>

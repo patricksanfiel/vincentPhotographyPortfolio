@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block head %}
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+
+    <title>{% block title %}{% endblock title %}</title>
+    {% endblock head %}
+</head>
+<body>
+    {% block pagecontent %}
+    <div class="jumpToNav">
+        <div class="row">
+            <p id="expandNav">Loading...</p>
+        </div>
+        <div class="row" id="topLevelJumpto">
+            <!-- <a href="#concertDiv" class="col--2 jumpToA">Concerts</a> -->
+            <a href="{% url 'singleCategory'%}?category=events" class="col--2 jumpToA" id="eventsJumpTo">Events</a>
+            <a href="{% url 'singleCategory'%}?category=people" class="col--2 jumpToA">People</a>
+            <a href="{% url 'singleCategory'%}?category=sports" class="col--2 jumpToA" id="sportsJumpTo">Sports</a>
+            <a href="{% url 'singleCategory'%}?category=travel" class="col--2 jumpToA" id="travelJumpTo">Travel</a>
+            <a href="{% url 'singleCategory'%}?category=wedding" class="col--2 jumpToA">Wedding</a>
+        </div>
+        <div class="row" id="bottomLevelJumpTo">
+        </div>
+    </div>
+    <div class="portfolioCategoryDiv">
+            <div class="row categoryDivHeader">
+              <header class="categoryHeader col-12" id="concertHeader">{{tag|capfirst}}</header>
+            </div>
+            <div class="row portfolioImage">
+            {% for photo in photos %}
+              {% if photo %}
+              <div class="col-3 photoDiv">
+                <a href="{{photo.pk}}"><img src="{{photo.image.url}}" alt="{{photo.title}}" class="col-12 individualPhoto" id="{{concert_photo.title}}"></a>
+              </div>
+                {% if forloop.counter|divisibleby:3 %}
+                  </div>
+                  <div class="row forBlockDiv">
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+            </div>
+          </div>
+          <div id="categoryPageBottom" class="row"><img src="{% static 'images/logo-png.png'%}" class="col-4" id="vinceLogo"></div>
+          <script type="text/javascript" src="{% static 'js/index.js' %}">
+          </script>
+    {% endblock pagecontent %}  
+</body>
+</html>
+

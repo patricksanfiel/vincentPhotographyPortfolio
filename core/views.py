@@ -45,3 +45,10 @@ def contact(request):
 def videos(request):
     active_tab = "Videos"
     return render(request, 'videos.html',{"active_tab":active_tab})
+
+def singleCategory(request):
+    tag = request.GET.get(["category"][0])
+    photos = Photo.objects.filter(tag=tag)
+    active_tab = "Photos"
+    return render(request, 'singlecategory.html',{"tag":tag, "photos":photos, "active_tab":active_tab})
+    
